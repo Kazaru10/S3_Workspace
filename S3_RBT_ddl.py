@@ -22,4 +22,8 @@ result = requests.get(Req_S3, auth = HTTPBasicAuth(username, password))
 
 tree = ET.fromstring(result.text)
 
+elements = list(tree)
+
+sub_element = list(elements[10])
+
 
