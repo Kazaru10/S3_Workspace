@@ -26,6 +26,9 @@ entries = tree_2.findall('{http://www.w3.org/2005/Atom}entry')
 
 n = random.randint(0, len(entries) - 1)
 
+e = entries[n]
 
+prod_id = e.find('{http://www.w3.org/2005/Atom}id')
 
+t = requests.get(prod_id.text + '/$value', auth = HTTPBasicAuth(username, password))
 
