@@ -32,3 +32,10 @@ prod_id = e.find('{http://www.w3.org/2005/Atom}id')
 
 t = requests.get(prod_id.text + '/$value', auth = HTTPBasicAuth(username, password))
 
+with open(r'file.zip', 'wb') as f:
+    f.write(t.content)
+
+
+
+
+
