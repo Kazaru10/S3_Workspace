@@ -22,7 +22,7 @@ result = requests.get(Req_S3, auth = HTTPBasicAuth(username, password))
 
 tree = ET.fromstring(result.text)
 
-entries = tree_2.findall('{http://www.w3.org/2005/Atom}entry')
+entries = tree.findall('{http://www.w3.org/2005/Atom}entry')
 
 n = random.randint(0, len(entries) - 1)
 
