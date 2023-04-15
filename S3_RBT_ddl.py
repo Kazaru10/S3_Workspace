@@ -5,13 +5,15 @@ from requests.auth import HTTPBasicAuth
 from datetime import date
 import xml.etree.ElementTree as ET
 import random
-import zipfile
+from zipfile import ZipFile
 
 
 #################
 
 username = "NAME"
 password = "PASS"
+
+Workspace = r"path to workspace" 
 
 #################
 
@@ -37,10 +39,12 @@ name = name.text
 
 t = requests.get(prod_id.text + '/$value', auth = HTTPBasicAuth(username, password))
 
-with open(r'name.zip', 'wb') as f:
+path2zip = Workspace + name + '.zip'
+with open(path2zip, 'wb') as f:
     f.write(t.content)
 
-
+with ZipFile(path2zip, 'r') as zip_Prod:
+    zip_Prod.extractall(Workspace + name)
 
 
 
