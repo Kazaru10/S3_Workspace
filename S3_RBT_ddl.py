@@ -30,9 +30,12 @@ e = entries[n]
 
 prod_id = e.find('{http://www.w3.org/2005/Atom}id')
 
+name = e.find('{http://www.w3.org/2005/Atom}title')
+name = name.text
+
 t = requests.get(prod_id.text + '/$value', auth = HTTPBasicAuth(username, password))
 
-with open(r'file.zip', 'wb') as f:
+with open(r'name.zip', 'wb') as f:
     f.write(t.content)
 
 
