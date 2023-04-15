@@ -4,6 +4,8 @@ import requests
 from requests.auth import HTTPBasicAuth
 from datetime import date
 import xml.etree.ElementTree as ET
+import random
+import zipfile
 
 
 #################
