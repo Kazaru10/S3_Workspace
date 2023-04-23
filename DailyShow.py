@@ -22,3 +22,7 @@ def display_S3():
 @app.route("/S2_TCI")
 
 app.run()
+
+
+# See link below
+# https://geekpython.in/render-images-from-flask#heading-displaying-local-images
