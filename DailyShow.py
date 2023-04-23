@@ -12,9 +12,13 @@ img = os.path.join('static', 'Image')
 def hello_world():
     return "<p>Hello, World!</p>"
 
+# S3
 @app.route("/S3_RBT")
 def display_S3():
     file = os.path.join(img, 'img.jpg')
     return render_template('template.html', image=file)
-    
+
+# S2
+@app.route("/S2_TCI")
+
 app.run()
